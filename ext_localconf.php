@@ -47,11 +47,11 @@ $boot = function ($_EXTKEY) {
         'Widas.' . $_EXTKEY,
         'Pi1',
         [
-            'Authentication' => 'connect',
+            \Widas\Cidaas\Controller\AuthenticationController::class => 'connect',
         ],
         // non-cacheable actions
         [
-            'Authentication' => 'connect'
+            \Widas\Cidaas\Controller\AuthenticationController::class => 'connect'
         ]
     );
     
