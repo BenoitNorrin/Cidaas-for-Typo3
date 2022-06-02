@@ -680,7 +680,7 @@ foreach($array as $key=>$value) {
         $currentPage = $pageArguments->getPageId();
 
         $frontendUser = GeneralUtility::makeInstance(FrontendUserAuthentication::class);
-        $localTSFE = GeneralUtility::makeInstance(TypoScriptFrontendController::class, null, $site, $routeResult->getLanguage(), $pageArguments, $frontendUser);
+        $localTSFE = GeneralUtility::makeInstance(TypoScriptFrontendController::class, GeneralUtility::makeInstance(\TYPO3\CMS\Core\Context\Context::class), $site, $routeResult->getLanguage(), $pageArguments, $frontendUser);
 
             /** @var TemplateService $templateService */
         $templateService = GeneralUtility::makeInstance(TemplateService::class, null, null, $localTSFE);
